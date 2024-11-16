@@ -1,8 +1,10 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import './App.css'
+import ProductList from 'src\Components\ProductList.jsx';
+import AddProductForm from 'src\Components\AddProductForm.jsx';
 
 function App() {
-  const products = [
+  const products = [products, setProducts] = useState([
     {
       id: 1,
       name: "Nike Air Max",
@@ -27,12 +29,17 @@ function App() {
       price: 29.99,
       description: "Genuine leather bifold wallet with RFID blocking"
     }
-  ]
+  ])
+  
+  const addProduct = (newProduct) => {
+    setProducts([...products, newProduct])
+  }
+
   return (
     <>
       <h1>Product Dashboard</h1>
-     
-      <ProductList products={products}/>
+      <AddProductForm addProduct={addProduct} />
+      <ProductList products={products} />
     </>
   )
 }
