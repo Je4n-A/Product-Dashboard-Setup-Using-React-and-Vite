@@ -1,10 +1,10 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react'
 import './App.css'
-import ProductList from 'src\Components\ProductList.jsx';
-import AddProductForm from 'src\Components\AddProductForm.jsx';
+import ProductList from './Components/ProductList/ProductList'
+import AddProductForm from './Components/AddProductForm/AddProductForm'
 
 function App() {
-  const products = [products, setProducts] = useState([
+  const [products, setProducts] = useState([
     {
       id: 1,
       name: "Nike Air Max",
@@ -30,17 +30,24 @@ function App() {
       description: "Genuine leather bifold wallet with RFID blocking"
     }
   ])
-  
+
   const addProduct = (newProduct) => {
     setProducts([...products, newProduct])
   }
 
+  const removeProduct = (productId) => {
+    setProducts(products.filter(product => product.id !== productId))
+  }
+
   return (
-    <>
+    <div className='app-container'>
       <h1>Product Dashboard</h1>
       <AddProductForm addProduct={addProduct} />
-      <ProductList products={products} />
-    </>
+      <ProductList 
+        products={products}
+        removeProduct={removeProduct}
+      />
+    </div>
   )
 }
 

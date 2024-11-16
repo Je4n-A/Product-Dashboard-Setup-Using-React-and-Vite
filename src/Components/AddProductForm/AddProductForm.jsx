@@ -27,7 +27,7 @@ function AddProductForm({ addProduct }) {
       
       addProduct(newProduct)
       
-      
+      // Reset form
       setName('')
       setPrice('')
       setDescription('')
