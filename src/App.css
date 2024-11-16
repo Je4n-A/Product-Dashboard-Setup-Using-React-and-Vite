@@ -77,8 +77,63 @@ h1 {
   background-color: white;
   border-radius: 8px;
   padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  box-shadow: 0 2px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1000px;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #f16c6c;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.1);
+}
+
+.submit-button {
+  background-color: hsl(0, 52%, 57%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #5867f7;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 .remove-btn {
