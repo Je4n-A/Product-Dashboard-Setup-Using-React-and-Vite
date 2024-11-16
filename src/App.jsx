@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <h1>Product Dashboard</h1>
-      <AddProductForm/>
+     
       <ProductList products={products}/>
     </>
   )
