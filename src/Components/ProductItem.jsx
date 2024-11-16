@@ -7,7 +7,7 @@ function ProductItem({ product }) {
             <p>{product.description}</p>
             <p>${product.price}</p>
         </li>
-    )d
+    )
 }
 
 export default ProductItem
